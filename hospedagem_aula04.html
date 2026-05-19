@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visite a Base Aérea de Anápolis</title>
+    <style>
+        body {
+            background-color: #d8eaff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #0A1F44; 
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 5px solid #FFD700; 
+            background-size: cover;
+            background-image: linear-gradient(
+            rgb(10, 6, 45), 
+            rgba(0, 0, 0, 0.7)), url(https://www.pdias.com.br/wp-content/uploads/2023/10/Aviacao-13-jpg.webp);
+        }
+        
+        .cabecalho-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cabecalho-container p {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .titulo-principal {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #FFD700; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .titulo-sec {
+            color: #8bbcf0;
+        }
+
+        .conteudo-principal {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .secao-formulario {
+            flex: 2;
+        }
+        
+        .form-conteudo {
+            padding: 20px;
+            border: 1px solid #b0b0b0;
+            border-radius: 4px;
+            color: #ddd;
+            background-color: #0A1F44;
+        }
+        
+        .secao-posts {
+            flex: 1;
+        }
+        
+        .posts {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .form-grupo {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .text-bold {
+            font-weight: bold;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaaaaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        
+        .input-radio,
+        .input-checkbox {
+            width: auto;
+        }
+
+        
+        button {
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        #btnCadastrar {
+            background-color: #007bff;
+        }
+        
+        #btnLimpar {
+            background-color: #e80f0f;
+        }
+        
+        #btnCadastrar:hover {
+            background-color: #0056b3;
+        }
+        
+        #btnLimpar:hover {
+            background-color: #b20202;
+        }
+        
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .post img {
+            width: 250px;
+        }
+        
+        .post-categoria {
+            color: #0A1F44; 
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .post-titulo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: #0A1F44; 
+        }
+        
+        .post-resumo {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: #0A1F44; 
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 5px solid #FFD700;
+            background-size: cover;
+            background-image: linear-gradient(
+            rgb(10, 6, 45), 
+            rgba(0, 0, 0, 0.7)), url(https://www.anapolis.go.gov.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-15-at-17.26.02-1024x682.jpeg); 
+        }
+        
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-texto {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cabecalho-container">
+            <h1 class="titulo-principal">Visite a Base Aérea de Anápolis</h1> 
+            <h1 class="titulo-sec">Campo Marechal Márcio de Souza e Mello</h1>
+            <p>Tenha a oportunidade de visitar a Base Aérea de Anápolis, inaugurada em 23 de agosto de 1972, e que se consolidou como uma das mais importantes bases da Força Aérea Brasileira (FAB).  Localizada estrategicamente próxima a Brasília (Anápolis - GO), desempenha um papel essencial na defesa do espaço aéreo nacional, com tecnologia de ponta e aeronaves avançadas que garantem a segurança do país.</p>
+        </div>
+    </header>
+
+    <div class="conteudo-principal">
+        <div class="secao-formulario">
+            <div class="form-conteudo">
+                <form action="#" method="post">
+                    <div class="form-grupo">
+                         <label for="nome">Nome:</label>
+                         <input type="text" id="nome" name="nome">
+                    </div>
+
+                    <div class="form-grupo">
+                         <label for="email">Email:</label>
+                         <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento">
+                    </div>
+
+                     <div class="form-grupo">
+                        <p class="text-bold">Gênero:</p>
+                        <input type="radio" class="input-radio" id="masculino" name="genero" value="M">
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" class="input-radio" id="feminino" name="genero" value="F">
+                        <label for="feminino">Feminino</label>
+                        <input type="radio" class="input-radio" id="outro" name="genero" value="O">
+                        <label for="feminino">Outro</label>
+                     </div>
+
+                    <div class="form-grupo">
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado">
+                        <option value="RO">Rondônia</option>
+                        <option value="AC">Acre</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="PR">Paraná</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="GO">Goiás</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="DF">Distrito Federal</option>
+                        </select>
+                    </div>
+                        
+                    <div class="form-grupo">
+                        <label for="interesses">Selecione os esquadrões escolhidos para visita:</label>
+                        <input type="checkbox" id="guardiao" value="guardiao">
+                        <label for="esporte">Esquadrão Guardião (E-99/ R-99)</label>
+
+                        <input type="checkbox" id="jaguar" value="jaguar">
+                        <label for="leitura">Esquadrão jaguar (F-5M/ F-39 Gripen)</label>
+
+                        <input type="checkbox" id="carcara" value="carcara">
+                        <label for="esporte">Esquadrão Carcará (Learjet R-35)</label>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensagem">Observações:</label>
+                        <textarea id="mensagem" rows="4" cols="40" name="mensagem"></textarea>
+                    </div>
+
+                     <div class="form-grupo">
+                        <button type="submit" id="btnCadastrar" name="btnCadastrar">Cadastrar</button>
+                        <button type="button" id="btnLimpar" name="btnLimpar">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="secao-posts">
+            <div class="posts">
+                
+                <article class="post">
+                    <span class="post-categoria">Tradição</span>
+                    <h3 class="post-titulo">Heróis da Aviação Brasileira</h3>
+                    <img src="https://www.anapolis.go.gov.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-15-at-17.25.48-1024x703.jpeg">
+                    <p class="post-resumo">Confira a história de pilotos e personalidades que marcaram a história da aviação militar no Brasil. Através de relatos...</p>
+                </article>
+                
+                <article class="post">
+                    <span class="post-categoria">Notícias</span>
+                    <h3 class="post-titulo">Vigilante, em defesa do Brasil: Infantaria da Aeronáutica celebra 82 anos</h3>
+                    <img src="https://www.defesanet.com.br/wp-content/uploads/2023/12/231211psi_A0A3365-1536x1024.jpg"> 
+                    <p class="post-resumo">“E no combate, sempre pronta a engajar, muita garra e ímpeto sem par, tu és da Força Aérea Brasileira, o fuzil, vigilante em defesa do Brasil”.</p>
+                </article>
+                
+                <article class="post">
+                    <span class="post-categoria">Comemorações</span>
+                    <h3 class="post-titulo">Há 76 anos era criado o Ministério da Aeronáutica</h3>
+                    <p class="post-resumo">A Força Aérea Brasileira (FAB) completou 76 anos na última sexta-feira (20/01).</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p class="footer-texto">&copy; 🇧🇷  Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
