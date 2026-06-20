@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jacyane Martins">
+    <meta name="Description" content="Blog feito para a matéria de Tecnologias Web, no dia 12/08/25.">
+
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-t5kolEbzuGKsrHyMVWMpbQT_YmoyGnZmTiQF2b9PTwmGNehZ6maAxEEeIlfa5PH9euw&usqp=CAU" type="image/x-icon">
+    <title>S.O.S Blog</title>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+
+    body {
+        font-family: 'system-ui', Arial, sans-serif, system-ui;
+        font-size: 20px;
+        background-color: #cdcdcd;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6; /*Descobrir essa função*/
+    }
+
+    .header {
+        text-align: center;
+        background-color: darkred;
+        color: white;
+        font-size: 20px;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .header p {
+        font-size: 25px;
+        color: darkorange;
+        margin: 5px 0 0;
+    }
+
+    .menu {
+        text-align: center;
+        background-color:rgb(95, 0, 0);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .menu a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+        font-size: 24px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: darkorange; 
+    }
+
+    .conteudo {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .page-section {
+        padding: 15px 0;
+    }
+
+    .position-examples {
+        position: relative;
+        background-color: #fff4f4;
+        border: 2px dashed darkred;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .position-examples .box-absolute {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 200px;
+        background-color: darkred;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 0.95em;
+    }
+
+    .fixed-note {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        background-color: darkred;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+    }
+
+    .comentarios {
+        max-width: 950px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    
+    
+    .post,
+    .categorias,
+    .comentarios {
+        background-color: white;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-left: 4px solid darkred;
+    }
+
+    .post h2 {
+        font-family: 'Oswald', sans-serif;
+        color: darkred;
+        margin-top: 0;
+        font-size: 30px;
+    }
+
+    .post small {
+    display: block;
+    color: #777;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+    .categorias {
+        margin-top: 45px;
+        margin-bottom: 70px;
+    }
+
+    .categorias h2 {
+        font-family: 'Oswald', sans-serif;
+        color: darkred;
+        margin-top: 0;
+        font-size: 30px;
+        border-bottom: 2px solid darkred
+    }
+
+    .categorias a {
+        color: darkred;
+        font-size: 20px;
+    }
+
+    .categorias li {
+        color: darkred;
+    }
+
+    .comentarios {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid darkred;
+}
+
+.comentarios h2 {
+    font-family: 'Oswald', sans-serif;
+    color: darkred;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 10px;
+    border-bottom: 2px solid darkred
+}
+
+.comentarios p {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee; /* Linha divisória sutil */
+}
+
+.comentarios p:last-child {
+    border-bottom: none; /* Remove a borda do último comentário */
+}
+
+.comentarios strong {
+    color: #8e0000; /* Vermelho escuro para o nome do autor */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+}
+
+.comentarios p:hover {
+    background-color: #fff9f9; /* Fundo sutil ao passar o mouse */
+    transition: background-color 0.3s;
+}
+
+.comentario small {
+    display: block;
+    color: #777;
+    font-size: 15px;
+    margin-top: 3px;
+}
+    .post img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 15px auto;
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: darkred;
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    td {
+        padding: 10px;
+        vertical-align: top;
+    }
+
+    tr:nth-child(even) { /*descobrir essa função*/
+        background-color: #f9f9f9;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    a {
+        color: #c62828;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #8e0000;
+        text-decoration: underline;
+    }
+
+    .aviso {
+        background-color: rgb(95, 0, 0);
+        padding: 15px;
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+    }
+
+    .aviso h4 {
+        margin: 0;
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;
+    }
+
+    .rodape {
+        background-color: darkred;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-size: 15px;
+    }
+</style>
+</head>
+<body>
+    
+        <div class="header">
+            <!--Fonte temporária (Adicionar Oswald, talvez )-->
+            <h1>S.O.S Blog</h1>
+            <p>Salvar vidas é mais simples do que você imagina.</p>
+        </div>
+        
+        <div class="menu">
+                <ul>
+                    <a href="#pagina1">Página 1</a>
+                    <a href="#pagina2">Página 2</a>
+                    <a href="#pagina3">Página 3</a>
+                    <a href="#Sobre">Sobre</a>
+                </ul>
+            </div>
+        
+        <div class="conteudo">
+        <div id="pagina1" class="page-section">
+        <div class="categorias">
+            <h2>Posts recentes</h2>
+            <ul>
+                <li><a href="#O que são primeiros socorros?">O que são primeiros socorros?</a></li>
+                <li><a href="#Números de emergência">Números de emergência</a></li>
+                <li><a href="#Queimaduras: o que fazer e não fazer">Queimaduras: o que fazer e não fazer</a></li>
+                <li><a href="#Kit de primeiros socorros ideal">Kit de primeiros socorros ideal</a></li>
+                <li><a href="#Como agir em casos de desmaio?">Como agir em casos de desmaio?</a></li>
+                </ul>
+        </div>
+        <div class="position-examples">
+            <p>Este exemplo usa <strong>position: relative</strong> no contêiner e <strong>position: absolute</strong> no elemento interno.</p>
+            <div class="box-absolute">position:absolute</div>
+        </div>
+            <section id="O que são primeiros socorros?">
+        <div class="post">
+            <h2>O que são primeiros socorros?<br><small>Postado em 08/04/2024 às 07:30</small></h2>
+            <p>Primeiros socorros, ou atendimento pré-hospitalar, são as ações iniciadas que devem ser tomadas em caso de <!--fazer um link aqui -->urgências e emergências, para evitar o agravamento da situação até a chegada de assitência profissional.</p>
+            <img src="https://blog.stoodi.com.br/wp-content/uploads/2020/04/maleta-primeiro-socorros-1.jpg"
+            alt="Atendimento pré-hospitalar"
+            width="250px">
+            <p>O conceito de primeiros socorros surgiu no contexto da Guerra do Solferino, em 1859, quando Jean Henry Dunant, um empresário suíço, presenciou a falta de cuidados para milhares de soldados e organizou voluntários para prestar primeiros soccorros aos feridos. Essa atitude acabou dando origem ao Comitê Internacional da Cruz Vermelha. Com o tempo, a Cruz Vermelha e outras instituições, passaram a difundir o conhecimento e treinamentos para primeiros socorros,  tornando-o uma prática comum em situações de emergência.</p>
+            <p>Atualmente, existem diversas técnicas que qualquer um pode aprender para prestar os primeiros socorros. Mas, antes de realizar qualquer procedimento, é importante se atentar aos seguintes detalhes:
+                <ul>
+                    <li>Manter a calma</li>
+                    <li>Garantir a própria segurança e a da vítima</li>
+                    <li>Afastar os curiosos</li>
+                    <li>Garantir que os serviços de emergência sejam acionados</li>
+                </ul>
+            </p>
+            <p>Em caso de dúvida, é sempre recomendável aguardar a chegada de profissionais de saúde qualificados.</p>
+            <h3>Importante!</h3>
+            <p><strong>Nunca deixe de prestar atendimento em casos de emergência, omissão de socorro é crime!</strong></p>
+            <p>"Art. 135 - Deixar de prestar assistência, quando possível fazê-lo sem risco pessoal, à criança abandonada ou extraviada, ou à pessoa inválida ou ferida, ao desamparo ou em grave e iminente perigo; ou não pedir, nesses casos, o socorro da autoridade pública:<br><br>Pena - detenção, de um a seis meses, ou multa.</p>
+            <p>Parágrafo único - A pena é aumentada de metade, se da omissão resulta lesão corporal de natureza grave, e triplicada, se resulta a morte."</p>
+        </div>
+        </section>
+    </div>
+
+    <div id="pagina2" class="page-section">
+        <section id="Números de emergência">
+        <div class="post">
+            <h2>Números de emergência<br><small>Postado em 06/09/2024 às 10:55</small></h2>
+            <p>Se você leu no post <strong>'O que são primeiros socorros?'</strong>, já sabe que uma das etapas de como prestar primeiros socorros é acionar os serviços de emergência. Dito isso, é importante saber onde e quais números são necessários para cada tipo de informação. Este post te explicará cada um dos principais números de emergência.</p>
+            <img src="https://vidasaudavel.einstein.br/wp-content/uploads/2020/06/telefones-uteis-emergencia.jpg"
+            alt="Números de emergência"
+            width="250px">
+            <table border="1">
+                <tr>
+                    <th>Número</th>
+                    <th>Serviço</th>
+                    <th>Quando acionar</th>
+                </tr>
+                <tr>
+                    <td>190</td>
+                    <td>Polícia Militar</td>
+                    <td>
+                        <ul>
+                            <li>Situações de violência ou crimes em andamento (assaltos, agressões, tiroteios).</li>
+                            <li>Perturbação da ordem pública.</li>
+                            <li>Necessidade de intervenção policial imediata.</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>192</td>
+                    <td>SAMU - Serviço de Atendimento Móvel de Urgência</td>
+                    <td>
+                        <ul>
+                            <li>Emergências médicas (ataques cardíacos, acidentes graves, quedas com fraturas).</li>
+                            <li>Intoxicações, envenenamentos ou overdoses.</li>
+                            <li>Partos de risco ou complicações de saúde súbitas.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>193</td>
+                    <td>Corpo de Bombeiros</td>
+                    <td>
+                        <ul>
+                            <li>Incêndios em residências, matas ou prédios.</li>
+                            <li>Acidentes de trânsito com vítimas presas.</li>
+                            <li>Resgates em altura, afogamentos ou desabamentos.</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>188</td>
+                    <td>CVV – Centro de Valorização da Vida</td>
+                    <td>
+                        <ul>
+                            <li>Crises emocionais e pensamentos suicidas.</li>
+                            <li>Necessidade de apoio psicológico gratuito e sigiloso.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>191</td>
+                    <td>Polícia Rodoviária Federal</td>
+                    <td>
+                        <ul>
+                            <li>Acidentes ou crimes em rodovias federais.</li>
+                            <li>Bloqueios, roubos de carga ou irregularidades nas estradas.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>197</td>
+                    <td>Polícia Civil</td>
+                    <td>
+                        <ul>
+                            <li>Denúncias de crimes já ocorridos (homicídios, desaparecimentos, fraudes).</li>
+                            <li>Investigação de casos não urgentes.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>199</td>
+                    <td>Defesa Civil</td>
+                    <td>
+                        <ul>
+                            <li>Desastres naturais (enchentes, deslizamentos, tempestades).</li>
+                            <li>Ajuda em situações de risco coletivo (evacuações, alagamentos).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>180</td>
+                    <td>Central de Atendimento à Mulher</td>
+                    <td>
+                        <ul>
+                            <li>Violência doméstica ou assédio contra mulheres.</li>
+                            <li>Denúncias de agressão ou ameaças.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>181</td>
+                    <td>Disque Denúncia</td>
+                    <td>
+                        <ul>
+                            <li>Informações anônimas sobre crimes (tráfico, sequestros, corrupção).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>Direitos Humanos</td>
+                    <td>
+                        <ul>
+                            <li>Violações de direitos humanos (abusos contra crianças, idosos, pessoas com deficiência).</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </section>
+
+        <section id="Queimaduras: o que fazer e não fazer">
+        <div class="post">
+            <h2>Queimaduras: o que fazer e não fazer<br><small>Postado em 13/01/2025 às 14:27</small></h2>
+            <img src="https://www.seconci-sp.org.br/midia/131708904912909190.JPG"
+            alt="Tipos de queimadura"
+            width="250px">
+                <p>Queimaduras são conhecidas como lesões na pele e tecidos causadas por contato com fontes de: <strong>calor, frio, substâncias químicas, eletricidade ou radiação</strong>. Elas são classificadas de acordo com a gravidade da lesão causada por extensão e dividida em graus <strong>(1º, 2º e 3º)</strong></p>
+                <h2>O que fazer</h2>
+        <h3>1º Grau (vermelhidão, dor leve):</h3>
+        <ul>
+            <li>Lave com <strong>água corrente fria</strong> por 10-15 minutos.</li>
+            <li>Cubra com pano limpo úmido se necessário.</li>
+        </ul>
+        
+        <h3>2º Grau (bolhas, dor intensa):</h3>
+        <ul>
+            <li><strong>Não estoure as bolhas!</strong></li>
+            <li>Lave com água fria e cubra com gaze estéril úmida.</li>
+            <li>Procure um médico se for extensa.</li>
+        </ul>
+        
+        <h3>3º Grau (pele escura/esbranquiçada, sem dor):</h3>
+        <ul>
+            <li><strong>Não toque na área!</strong></li>
+            <li>Cubra com pano limpo e seco.</li>
+            <li>Chame o <strong>192 (SAMU)</strong> imediatamente.</li>
+        </ul>
+
+         <h2>O que não fazer</h2>
+        <ol>
+            <li><strong>Gelo direto:</strong> piora o dano tecidual, além de causar queimadura por frio.</li>
+            <li><strong>Pasta de dente, manteiga ou clara de ovo:</strong> causam infecção e pus na área lesionada.</li>
+            <li><strong>Colocar algodão:</strong> gruda no ferimento.</li>
+            <li><strong>Estourar bolhas:</strong> abre porta para bactérias e desprotege a lesão, podendo agravar a situação.</li>
+            <li>Demorar para buscar ajuda em queimaduras grandes ou no rosto.</li>
+        </ol>
+        <p>Importante: Para queimaduras solares, use <strong>hidratante sem perfume</strong> e beba muita água.</p>
+        </div>
+        </section>
+    </div>
+
+    <div id="pagina3" class="page-section">
+        <section id="Kit de primeiros socorros ideal">
+        <div class="post">
+            <h2>Kit de Primeiros Socorros Ideal<br><small>Postado em 24/07/2024 às 19:03</small></h2>
+            <img src="https://cdn.awsli.com.br/800x800/1211/1211131/produto/105672070/e3186b36dd.jpg"
+            alt="Tipos de queimadura"
+            width="250px">
+        <p>Um kit de primeiros socorros é essencial para um socorrista e principalmente em casos de urgência e emergência. E quando bem equipado, é perfeito para agilizar ou facilitar a ocorrência a ser atendida. Veja os itens essenciais para diferentes situações e como organizá-los!</p>
+    
+        <h2>Kit Básico para Casa e Carro</h2>
+        <ol>
+            <li>Luvas descartáveis (proteção contra fluidos corporais)</li>
+            <li>Gaze estéril e ataduras (para cobrir ferimentos)</li>
+            <li>Antisséptico (clorexidina ou água oxigenada 10 vol.)</li>
+            <li>Esparadrapo e band-aids (tamanhos variados)</li>
+            <li>Tesoura sem ponta e pinça(para cortar curativos ou remover farpas)</li>
+            <li>Termômetro digital</li>
+            <li>Analgésicos comuns (paracetamol ou ibuprofeno, com orientação médica)</li>
+        </ol>
+    
+         <p>Dica: Guarde seu kit em uma térmica ou estojo à prova d'água para evitar que os materiais sejam danificados, e o deixe em local de fácil acesso para agilizar caso algum incidente aconteça.</p>
+        <h2>Kit para Viagens ou Mochila</h2>
+        <ul>
+            <li>Soro fisiológico (limpeza de olhos ou ferimentos)</li>
+            <li>Repelente e protetor solar</li>
+            <li>Pomada para queimaduras (ex.: sulfadiazina de prata)</li>
+            <li>Antiácido e anti-diarréico</li>
+            <li>Medicamentos pessoais (se houver condições crônicas)</li>
+        </ul>
+    
+        <strong>Aviso: Nunca</strong> inclua remédios sem orientação médica, e verifique os prazos de validade a cada <strong>6 meses</strong>!
+    
+        <h2>O Que Evitar no Kit?</h2>
+        <ul>
+            <li><strong>Algodão</strong> (gruda em ferimentos abertos)</li>
+            <li><strong>Remédios vencidos</strong></li>
+            <li><strong>Receitas caseiras</strong> (pasta de dente, café em pó, etc.)</li>
+        </ul>
+        </div>
+        </section>
+
+        <section id="Como agir em casos de desmaio?">
+        <div class="post">
+            <h2>Como agir em casos de desmaio?<br><small>Postado em 09/05/2025 às 12:12</small></h2>
+            <img src="https://drleonardoalves.com.br/wp-content/uploads/2024/03/tempo-duracao-de-um-desmaio-1024x585.jpg"
+            alt="Tipos de queimadura"
+            width="250px">
+    
+        <p>O desmaio, também conhecido como sincope, é a perda repentina e temporária de consciência, causada por redução temporária de fluxo sanguíneo no cérebro. O desmaio pode ser causado por vários motivos, desde desidratação, mudanças bruscas de posição, exposição ao calor e chegando até a problemas cardíacos ou neurológicos. Confira exemplos de como proceder em casos de desmaio.</p>
+    
+        <h2>Sinais de Alerta (Antes do Desmaio)</h2>
+        <ul>
+            <li>Tontura</li>
+            <li>Visão turva ou "escurecida"</li>
+            <li>Suor frio</li>
+            <li>Náusea</li>
+            <li>Letargia</li>
+        </ul>
+
+        <h2>Como agir Corretamente</h2>
+        <ol>
+            <li><strong>Proteja a pessoa</strong>: Deite-a de costas e eleve as pernas ( em 45°, na altura do joelho).</li>
+            <li><strong>Afrouxe roupas apertadas</strong>: Cintos, gravatas, sutiãs.</li>
+            <li><strong>Garanta ar fresco</strong>: Afaste curiosos, abra janelas e verifique se a vítima não está com as vias aéreas bloqueadas.</li>
+            <li><strong>Verifique os sinais vitais:</strong>A todo momento, fique de olho na vítima para garantir que ela retomará a consciência.</li>
+        </ol>
+
+        <h2>O Que NÃO Fazer</h2>
+        <ul>
+            <li><strong>Jogar água no rosto</strong> (risco de afogamento se estiver inconsciente).</li>
+            <li><strong>Dar Álcool ou outras substâncias para a vítima inalar:</strong>Isso não ajuda a recuperar a consciência e pode ser prejudicial.</li>
+            <li><strong>Oferecer comida/bebida</strong> (pode engasgar).</li>
+            <li><strong>Sacudir a vítima</strong> (piora se houver trauma por queda).</li>
+        </ul>
+
+        <h2>Quando Chamar o SAMU (192)?</h2>
+        <ul>
+            <li>Se não recuperar a consciência em <strong>1-2 minutos</strong>.</li>
+            <li>Se houver <strong>convulsões</strong> ou batimentos cardíacos irregulares.</li>
+            <li>Se a pessoa <strong>bater a cabeça</strong> ao cair.</li>
+        </ul>
+        
+        <p><strong>Importante: </strong>Mantenha-se sempre hidratado, alimente-se regularmente e evite se expor ao calor por preíodos prolongados.</p>
+        
+        </div>
+    </section>
+    </div>
+</div>
+    
+        <div class="comentarios">
+        <h2>Comentários</h2>
+        
+        <div class="comentario">
+            <p><strong>Carlos Silva:</strong> Esse post sobre primeiros socorros salvou meu dia! Ontem presenciei um acidente e lembrei dos passos que li aqui. Muito obrigado!<br><small>Postado em 15/03/2025 às 09:47</small></p>
+        </div>
+        
+        <div class="comentario">
+            <p><strong>Dr. Marcos Antônio (Médico):</strong> Como profissional de saúde, fiquei impressionado com a precisão das informações sobre queimaduras. Só complementaria que...<br><small>Postado em 28/07/2024 às 16:12</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Ana Lúcia:</strong> Adorei o blog! Vocês poderiam fazer um post sobre primeiros socorros em bebês? Tenho um recém-nascido e fico preocupada.<br><small>Postado em 03/11/2025 às 21:35</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Roberto Ferreira:</strong> A tabela de números de emergência foi genial! Já salvei no meu celular. Só faltou o 190 da Polícia Civil.<br><small>Postado em 19/05/2024 às 08:15</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Equipe S.O.S Blog:</strong> Obrigado pelo feedback, Roberto! Vamos atualizar a tabela com essa informação. Ana, ótima sugestão! Já estamos preparando um post sobre emergências pediátricas.<br><small>Postado em 22/09/2025 às 14:00</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Fernanda Costa:</strong> Gostaria de saber mais sobre como improvisar um kit de primeiros socorros quando estamos viajando. Alguma dica extra?<br><small>Postado em 07/12/2024 às 11:23</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Pedro Henrique:</strong> O tópico sobre desmaios me ajudou muito na escola semana passada! Uma colega desmaiou na aula de educação física e eu soube exatamente o que fazer.<br><small>Postado em 30/01/2025 às 18:44</small></p>
+        </div>
+
+        <div class="comentario">
+            <p><strong>Prof. Amanda (Enfermeira):</strong> Parabéns pela iniciativa! Como educadora em saúde, sugiro que incluam um infográfico sobre RCP básico nos próximos posts.<br><small>Postado em 14/02/2024 às 10:05</small></p>
+        </div>
+        </div>
+            <section id="Sobre">
+            <div class="aviso">
+                <h4>Este blog não substitui atendimento médico. Em emergências, ligue <strong style="color: darkorange;">192 (SAMU)</strong> ou <strong style="color: darkorange;">193 (Bombeiros)</strong></h4>
+            </div>
+            <div class="rodape">
+            <p>&copy; 2025 S.O.S Blog. Todos os direitos reservados.</p>
+            </div>
+            </section>
+    <div class="fixed-note">Ajuda emergencial: disque 192 ou 193</div>
+</body>
+</html>

@@ -9,13 +9,13 @@ html {
 
 body {
   font-family: monospace;
-  background: /*linear-gradient(180deg, #34b874 0%, #173c2a 50%, #113c26 80%, #071813 100%);*/
+  background-color: #ffffff;
   color: #222;
 }
 
 /* HEADER */
 header {
-  background-color: #041a1a;
+  background: linear-gradient(180deg, #00140a 0%, #173c2a 50%, #185737 80%, #0f5c36 100%);
   padding: 30px 20px;
   color: white;
   display: flex;
@@ -83,12 +83,12 @@ section {
 section h2 {
   font-size: 1.6rem;
   margin-bottom: 6px;
-  color: #1b3636;
+  color: #087e35;
 }
 .section-line {
   width: 40px;
   height: 3px;
-  background-color: #84ff93;
+  background-color: #042408;
   margin-bottom: 30px;
 }
 
@@ -249,7 +249,8 @@ textarea {
 
 /* FOOTER */
 footer {
-  background-color: #041a1a;
+  background: linear-gradient(180deg, #00140a 0%, #173c2a 50%, #185737 80%, #0f5c36 100%);
+  border-top: 20px solid #173c2a;
   padding: 20px;
   text-align: center;
   color: white;

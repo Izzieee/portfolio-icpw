@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Travel-Hub</title>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+        background-color: #a8cdd3;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .conteudo h2 {
+        border-bottom: 1px solid #ffffff;
+        margin-right: 800px;
+      }
+
+      header {
+        background-color: #030918;
+        justify-content: space-between;
+        padding: 0 40px;
+        text-align: center;
+        display: flex;
+        background-image: linear-gradient(#030918, #03132f);
+      }
+
+      header h2 {
+        font-size: 40px;
+        margin-top: 30px;
+        margin-left: 40px;
+        text-align: center;
+        color: white;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      .logo img {
+        width: 100px;
+      }
+
+      nav,
+      ul {
+        background-color: #03132f;
+        text-align: center;
+        padding: 0 10px;
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-content: center;
+        gap: 40px;
+        list-style: none;
+      }
+
+      ul a {
+        text-decoration: none;
+        list-style: none;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+      }
+
+      ul a:hover {
+        color: rgb(0, 73, 95);
+      }
+
+      main {
+        color: rgb(223, 246, 248);
+        font-family: arial;
+        margin: 35px auto;
+        width: 80%;
+        border: solid 2px;
+        border-radius: 20px;
+        padding: 30px;
+        backdrop-filter: blur(25px);
+        background-color: #03132f;
+        box-shadow: 4px 2px 20px #034054;
+      }
+
+      .card-destino img {
+        width: 350px;
+        box-shadow: 3px 4px 10px #033444;
+        margin: 20px;
+        border: solid 2px #76c6e1;
+        border-radius: 20px;
+        width: 45%;
+      }
+
+      .card-destino p {
+        margin-bottom: 100px;
+        font-size: 20px;
+      }
+
+      .galeria img {
+        box-shadow: 3px 4px 10px #033444;
+        margin: 20px;
+        border: solid 2px #76c6e1;
+        border-radius: 20px;
+        width: 45%;
+      }
+
+      .pacote {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0%;
+        margin: 0px;
+        background-color: #ffffff;
+      }
+
+      .pacote img {
+        border: none;
+        box-shadow: none;
+        width: 14%;
+        margin: 1%;
+      }
+
+      .pacote img:hover {
+        transform: scale(1.01);
+      }
+
+      .form {
+        margin: 80px auto 0;
+        padding: 30px 25px;
+        max-width: 760px;
+        background: linear-gradient(180deg, rgba(3, 8, 50, 0.95), rgba(12, 29, 64, 0.95));
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        color: aliceblue;
+        border: 1px solid rgba(107, 200, 239, 0.4);
+        border-radius: 24px;
+      }
+
+      .form h1 {
+        margin-bottom: 24px;
+        font-size: 32px;
+        text-align: center;
+        color: #f2f9ff;
+      }
+
+      .form form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .form label,
+      .form legend {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #dceef7;
+      }
+
+      .form input,
+      .form select,
+      .form textarea {
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(107, 200, 239, 0.75);
+        border-radius: 16px;
+        background-color: #f7fbff;
+        color: #0f2f4c;
+        padding: 12px 14px;
+        font-size: 16px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .form input:focus,
+      .form select:focus,
+      .form textarea:focus {
+        outline: none;
+        border-color: #8dd1f5;
+        box-shadow: 0 0 0 4px rgba(107, 200, 239, 0.18);
+      }
+
+      .form textarea {
+        min-height: 160px;
+        resize: vertical;
+      }
+
+      .form fieldset {
+        border: 1px solid rgba(107, 200, 239, 0.5);
+        border-radius: 18px;
+        padding: 18px 16px;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .form fieldset label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 18px;
+        font-weight: normal;
+      }
+
+      .form fieldset input {
+        margin-right: 8px;
+      }
+
+      .button-contato {
+        display: flex;
+        justify-content: flex-end;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .button-contato button {
+        border: 1px solid transparent;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        padding: 12px 28px;
+        transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .button-contato button:hover {
+        transform: translateY(-1px);
+      }
+
+      .post button {
+        border: 2px;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        color: black;
+        padding: 10px 30px;
+        margin: 0 9px;
+      }
+
+      #btnComprar {
+        background-color: yellow;
+        font-weight: bold;
+        color:#11388e;
+        font-size: 20px;
+      }
+
+      #btnComprar:hover {
+        background-color: #ffcb2f;
+      }
+
+      #Entrar {
+        margin-top: 40px;
+        margin-left: 100px;
+        background-color: #11388e;
+        color: white;
+        font-weight: bold;
+      }
+
+      #Entrar:hover {
+        background-color: white;
+        color: #11388e;
+      }
+
+      #btnEnviar {
+        background-color: #055211;
+        font-weight: bold;
+        color: white;
+      }
+
+      #btnLimpar {
+        background-color: #a90b0b;
+        font-weight: bolder;
+        color: white;
+      }
+
+      #btnEnviar:hover {
+        background-color: #28ba5b;
+      }
+
+      #btnLimpar:hover {
+        background-color: #cf2727;
+      }
+
+      footer {
+        background-color: #0a1f44;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 10px solid #03132f;
+        background-size: cover;
+        background-image: linear-gradient(#030918, #03132f);
+      }
+
+      footer p {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .redes-sociais {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .redes-sociais h4 {
+        margin-bottom: 15px;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+      }
+
+      .icones-sociais a {
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .icones-sociais img {
+        width: 40px;
+        vertical-align: middle;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .icones-sociais img:hover {
+        transform: scale(1.1);
+      }
+
+      .servicos-conteiner {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 10px;
+        margin-top: 80px;
+      }
+
+      .card {
+        background-color: rgb(255, 255, 255);
+        width: 200px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        color: rgb(0, 0, 0);
+        box-shadow: 3px 4px 10px #033444;
+        color: #04226c;
+      }
+
+      .card:hover {
+        transform: scale(1.03);
+      }
+      .card img {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <img src="logo/logo.png" alt="logo" />
+      </div>
+      <div>
+        <h2>TravelHub</h2>
+      </div>
+      <div class="button-entrar">
+        <button id="Entrar">Entrar</button>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#destino">Destino</a></li>
+        <li><a href="#galeria">Galeria de Imagens</a></li>
+        <li><a href="#pacotes">Pacotes</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="conteudo">
+        <div class="conteudo">
+          <div class="card-destino">
+            <h1 id="destino">Destinos</h1>
+            <h2>Rio de Janeiro, RJ</h2>
+            <img src="destinos/Rio.jpg" alt="Rio de Janeiro" />
+            <p>
+              A Cidade Maravilhosa é um espetáculo de natureza e cultura. Dos
+              icônicos Cristo Redentor e Pão de Açúcar às mundialmente famosas
+              praias de Copacabana e Ipanema, o Rio oferece uma experiência
+              completa. Uma metrópole onde a vida urbana e a beleza natural se
+              encontram em perfeita harmonia. Ideal para: Quem busca praia,
+              cultura, vida noturna e paisagens icônicas.
+            </p>
+
+            <h2>Lençois Maranhences, MA</h2>
+            <img src="destinos/lençois.png" alt="Lençois Maranhences" />
+            <p>
+              Imagine um imenso deserto de dunas de areia branca, pontilhado por
+              incontáveis lagoas de água cristalina e esverdeada. Um cenário que
+              muda completamente entre as estações de chuva e seca, oferecendo
+              uma experiência visual e sensorial inesquecível. É a aventura
+              perfeita para quem quer se sentir em outro planeta, sem sair do
+              Brasil. Ideal para: Aventureiros, fotógrafos e viajantes em busca
+              de paisagens únicas e tranquilidade.
+            </p>
+
+            <h2>Fortaleza, CE</h2>
+            <img src="destinos/Fortaleza.webp" alt="Fortaleza" />
+            <p>
+              Com algumas das praias urbanas mais animadas do país, como a Praia
+              de Iracema e a Beira Mar, Fortaleza é sinônimo de diversão
+              garantida. Ao entardecer, não perca o pôr do sol no Ponte dos
+              Ingleses. E a noite? É tempo de forró pé-de-serra e uma das
+              culinárias mais saborosas do Brasil. A porta de entrada para as
+              famosas praias do Ceará, como Jericoacoara e Canoa Quebrada. Ideal
+              para: Famílias, grupos de amigos e quem curte vida noturna,
+              compras e gastronomia.
+            </p>
+
+            <h2>Fervedouro do Jalapão, TO</h2>
+            <img src="destinos/fervedoutoJ.jpg" alt="Fervedouro" />
+            <p>
+              Uma das joias mais preciosas do paraíso ecoaventureiro do Jalapão,
+              o Fervedouro é uma experiência mágica. Banhar-se nessas águas
+              refrescantes, cercado pela vegetação exuberante, é como entrar em
+              um oásis secreto e sentir a força da natureza. Um verdadeiro spa
+              natural. Ideal para: Aventureiros que buscam conexão com a
+              natureza, tranquilidade absoluta e fenômenos naturais únicos.
+            </p>
+          </div>
+
+          <div class="galeria">
+            <h1 id="galeria">Galeria de Imagens</h1>
+            <img src="galeria/furnas.jpg" alt="Galeria de img" />
+            <img src="galeria/avenida-paulista.jpg" alt="Galeria de img" />
+            <img src="galeria/campos-do-jordao.jpg" alt="Galeria de img" />
+            <img src="galeria/parque-lage.jpg" alt="Galeria de img" />
+            <img src="galeria/rio-sucuri.jpg" alt="Galeria de img" />
+            <img src="galeria/porto-de-galinhas.jpg" alt="Galeria de img" />
+          </div>
+
+          <h1 id="pacotes">Tabela de Pacotes</h1>
+          <div class="servicos-conteiner">
+            <div class="card">
+              <img src="pacotes/Noronha.jpg" alt="Pacote Fernando de Noronha" />
+              <h3>Noronha</h3>
+              <p>12X de 129,90</p>
+              <button type="submit" value="Comprar" id="btnComprar">Comprar</button>
+            </div>
+
+            <div class="card">
+              <img src="pacotes/Iguacu.jpg" alt="Pacote Iguaçu" />
+              <h3>Iguaçu</h3>
+              <p>10X de 129,90</p>
+              <button type="submit" value="Comprar" id="btnComprar">Comprar</button>
+            </div>
+
+            <div class="card">
+              <img src="pacotes/Diamantina.png" alt="Pacote Diamantina" />
+              <h3>Chapada Diamantina</h3>
+              <p>12X de 150,00</p>
+              <button type="submit" value="Comprar" id="btnComprar">Comprar</button>
+            </div>
+
+            <div class="card">
+              <img src="pacotes/Gramado.jpg" alt="Pacote Gramado" />
+              <h3>Gramado</h3>
+              <p>15X de 178,90</p>
+              <button type="submit" value="Comprar" id="btnComprar">Comprar</button>
+            </div>
+          </div>
+
+          <div class="form">
+            <h1 id="contato">Formulário para Contato</h1>
+
+            <form action="#" method="post">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" maxlength="50" />
+
+              <label for="telefone">Telefone:</label>
+              <input type="tel" id="telefone" name="telefone" />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" />
+
+              <label for="data-nascimento">Data de nascimento:</label>
+              <input type="date" id="data-nascimento" name="data-nascimento" />
+
+              <label for="numero-pessoas">Número de pessoas:</label>
+              <input type="number" id="numero-pessoas" name="numero-pessoas" min="1" max="20" />
+
+              <label for="destino-preferido">Destino preferido:</label>
+              <select id="destino-preferido" name="destino-preferido">
+                <option value="">Selecione...</option>
+                <option value="rio">Rio de Janeiro</option>
+                <option value="lençois">Lençóis Maranhenses</option>
+                <option value="fortaleza">Fortaleza</option>
+                <option value="jalapao">Jalapão</option>
+              </select>
+
+              <fieldset>
+                <legend>Tipo de viagem</legend>
+                <label>
+                  <input type="radio" name="tipo-viagem" value="lazer" checked />
+                  Lazer
+                </label>
+                <label>
+                  <input type="radio" name="tipo-viagem" value="aventura" />
+                  Aventura
+                </label>
+                <label>
+                  <input type="radio" name="tipo-viagem" value="cultural" />
+                  Cultural
+                </label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Preferências</legend>
+                <label>
+                  <input type="checkbox" name="preferencias" value="praia" />
+                  Praia
+                </label>
+                <label>
+                  <input type="checkbox" name="preferencias" value="natureza" />
+                  Natureza
+                </label>
+                <label>
+                  <input type="checkbox" name="preferencias" value="gastronomia" />
+                  Gastronomia
+                </label>
+              </fieldset>
+
+              <label for="orcamento">Orçamento aproximado:</label>
+              <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 2000" />
+
+              <label for="mensagem">Mensagem:</label><br />
+              <textarea id="mensagem" name="mensagem" rows="4" cols="40"></textarea>
+
+              <div class="button-contato">
+                <button type="submit" id="btnEnviar">Enviar</button>
+                <button type="reset" id="btnLimpar">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="redes-sociais">
+        <h4>Nos acompanhe também:</h4>
+        <div class="icones-sociais">
+          <a href="#" target="_blank" aria-label="Nossa página no Facebook">
+            <img src="logo/facebook.png" alt="Facebook" />
+          </a>
+          <a href="#" target="_blank" aria-label="Nosso perfil no Instagram">
+            <img src="logo/instagram.png" alt="Instagram" />
+          </a>
+          <a href="#" target="_blank" aria-label="Nossa página no LinkedIn">
+            <img src="logo/linkedln.png" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+
+      <p>&copy;2025 - Agência TravelHub</p>
+    </footer>
+  </body>
+</html>
